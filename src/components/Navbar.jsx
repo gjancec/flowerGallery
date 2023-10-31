@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 {/*FaBars hamburger, FaTimes cross*/}
-import {FaBars, FaTimes, FaGithub, FaLinkedin} from 'react-icons/fa'
+import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa'
 import {HiOutlineMail} from 'react-icons/hi'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import Logo from '../assets/react.svg'
@@ -12,7 +12,7 @@ const [nav, setNav]=useState(false)
 const handleClick = () =>setNav(!nav)
 
   return (
-    <div className = 'fixed w-full h-[80px] flex justify-between items-center px-4 bg-white'>
+    <div className = 'fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#c3cad5]' >
       { /*menu logo*/}
       <div>
         <img src={Logo} alt="Logo Image" style={{width:'50px'}} />
@@ -46,6 +46,14 @@ const handleClick = () =>setNav(!nav)
     </ul>
     {/*Social icons*/}
 <div className='flex fixed flex-col top-[35%] left-0'>
+  <ul>
+    <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-300'>
+      <a className='flex justify-between items-center w-full'
+      href="/">
+        Linkedin <FaLinkedin size={30} /> 
+      </a>
+    </li>
+  </ul>
   
   
 </div>
