@@ -1,6 +1,6 @@
 # Responsive Navbar  
 FrontEnd  
-Tecnology used: React + Vite + Tailwind
+Technology: React + Vite + Tailwind
 
 
 
