@@ -1,6 +1,6 @@
-# Responsive Navbar  
-FrontEnd  HTML/CSS/JavaScript
-Technology: React + Vite + Tailwind
+# Responsive Navbar    
+FrontEnd  HTML/CSS/JavaScript  
+Technology: React + Vite + Tailwind  
 
 
 
