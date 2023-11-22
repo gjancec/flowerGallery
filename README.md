@@ -1,4 +1,5 @@
-# Responsive Navbar    
+# Responsive Landing page     
+
 FrontEnd: HTML/CSS/JavaScript  
 Technology: React + Vite + Tailwind  
 
