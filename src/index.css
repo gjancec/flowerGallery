@@ -5,12 +5,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-@layer base{
-    body{
-        @apply font-[Playfair];
-    }
-    li{
-        @apply px-4;
-        @apply cursor-pointer;
-    }
+html,
+body,
+#root,
+.app{
+    height: 100%;
+    background-color: whitesmoke;
 }
+

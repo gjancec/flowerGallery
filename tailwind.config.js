@@ -7,6 +7,11 @@ export default {
   theme: {
     extend: {},
   },
+  
+  fontFamily:{
+    playfair: ["Playfair Display", "serif"],
+    opensans: ["Open Sans", "sans-serif"],
+  },
   plugins: [],
 }
 

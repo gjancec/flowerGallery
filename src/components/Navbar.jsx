@@ -5,61 +5,107 @@ import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa'
 import {HiOutlineMail} from 'react-icons/hi'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import Logo from '../assets/react.svg'
+import {AiOutlineMenu, AiOutlineHome} from 'react-icons/ai'
+import useMediaQuery from '../assets/hooks/useMediaQuery';
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+const Link = ({ page, selectedPage, setSelectedPage }) => {
+  const lowerCasePage = page.toLowerCase();
+  return (
+    <AnchorLink
+      className={`${selectedPage === lowerCasePage ? "text-red-300" : ""} hover:text-red-300 transition duration-500`}
+      href={`#${lowerCasePage}`}
+      onClick={() => setSelectedPage(lowerCasePage)}
+    >
+      {page}
+    </AnchorLink>
+  );
+};
 
 
-const Navbar = () => {
-{/*handle click on hamburger*/}
-const [nav, setNav]=useState(false)
-const handleClick = () =>setNav(!nav)
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  const navbarBackground = isTopOfPage ? "" : "bg-red-100";
+
+
+
 
   return (
-    <div className = 'fixed w-full h-[80px] flex justify-between items-center px-4' >
-      { /*menu logo*/}
-      <div>
-        <img src={Logo} alt="Logo Image" style={{width:'50px'}} />
+    <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
+      <div className="flex items-center justify-between mx-auto w-5/6">
+        <h4 className="font-playfair text-3xl font-bold">LOGO.</h4>
+
+        {/* DESKTOP NAV */}
+        {isAboveSmallScreens ? (
+          <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
+            <Link
+              page="Home"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Gallery"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="About"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Contact"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+           
+          </div>
+        ) : (
+          <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
+            <FaBars />
+          </div>
+        )}
+
+        {/* MOBILE MENU POPUP */}
+        {!isAboveSmallScreens && isMenuToggled && (
+          <div className="fixed right-0 bottom-0 h-full bg-[#F1F2F4] w-[300px]">
+            {/* CLOSE ICON */}
+            <div className="flex justify-end p-12">
+              <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                <FaTimes />
+              </button>
+            </div>
+
+            {/* MENU ITEMS */}
+            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+              <Link
+                page="Home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Gallery"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="About"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Contact"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              
+            </div>
+          </div>
+        )}
       </div>
-      
-      
-       { /*menu mobile first, @media (min-width: 768px) {
-                              .md\:flex {
-                                  display: flex;
-                              }
-      }*/}
-        
-        <ul className='hidden md:flex  text-white'>
-          <li>Home</li>
-          <li>Gallery</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-    
-
-    {/*Hamburger biger medium hide, z index order of overlapping HTML elements, higher index on top of lower index*/}
-    <div onClick={handleClick} className ='md:hidden z-10 text-white'>
-     {!nav ? <FaBars /> : <FaTimes />}
-    </div>
-    {/*Mobile menu*/}
-    <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#887a68] flex flex-col justify-center items-center'}>
-          <li className='py-6 text-4xl'>Home</li>
-          <li className='py-6 text-4xl'>Gallery</li>
-          <li className='py-6 text-4xl'>About</li>
-          <li className='py-6 text-4xl'>Contact</li>
-    </ul>
-    {/*Social icons*/}
-{/*<div className='flex fixed flex-col top-[35%] left-0'>
-  <ul>
-    <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-300'>
-      <a className='flex justify-between items-center w-full'
-      href="/">
-        Linkedin <FaLinkedin size={30} /> 
-      </a>
-    </li>
-  </ul>
-  
-  
-    </div>*/}
-
-    </div>
-  )
-}
-export default Navbar
+    </nav>
+  );
+};
+export default Navbar;
