@@ -1,12 +1,9 @@
 import React, {useState} from 'react'
 
 {/*FaBars hamburger, FaTimes cross*/}
-import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa'
-import {HiOutlineMail} from 'react-icons/hi'
-import {BsFillPersonLinesFill} from 'react-icons/bs'
-import Logo from '../assets/react.svg'
-import {AiOutlineMenu, AiOutlineHome} from 'react-icons/ai'
-import useMediaQuery from '../assets/hooks/useMediaQuery';
+import {FaBars, FaTimes} from 'react-icons/fa'
+
+import useMediaQuery from '../hooks/useMediaQuery';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
@@ -27,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-red-100";
+  const navbarBackground = isTopOfPage ? "" : "bg-transparent";
 
 
 
