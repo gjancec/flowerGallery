@@ -34,12 +34,8 @@ const FGallery =({title}) => {
         </p>
       </div>
     
-       <img src={`../assets/${gTitle}.jpg`} alt={gTitle} />
+       <img  className='h-full w-full' src={`../assets/${gTitle}.jpg`} alt={gTitle} />
      
-        
-      
-   
-      
     </motion.div>
   );
 };
@@ -51,7 +47,7 @@ const Gallery=()=> {
     <section id="gallery" className="pt-48 pb-48"> 
 {/*HEADINGS*/}
 <motion.div
-          className="md:w-2/4 mx-auto text-center"
+          className="md:w-2/5 mx-auto text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -67,7 +63,7 @@ const Gallery=()=> {
           </p>
           
           <div className="flex justify-center mt-5">
-          <LineGradient width="w-1/3" />
+          <LineGradient width="w-2/3" />
           </div>
           </div> 
           <p className="mt-10 mb-10">
@@ -84,12 +80,11 @@ const Gallery=()=> {
       viewport={{ once: true, amount: 0.5 }}
       variants={container} 
       
-    
   >
     
     {/*ROW 1*/}
-    <div className="flex, justify-center text-center items-center p-10 bg-red-200
-    max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold">
+    <div className="flex justify-center text-center items-center p-10 bg-red-200
+              max-w-[640px] max-h-[640px] text-2xl font-playfair font-semibold">
       BEUTIFULL FLOWERS
     </div>
   <FGallery title="Flower 1" />
@@ -103,8 +98,8 @@ const Gallery=()=> {
   
   <FGallery title="Flower 6" />
   <FGallery  title="Flower 7" />
-  <div className="flex, justify-center text-center items-center p-10 bg-green-200
-    max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold">
+  <div className="flex justify-center text-center items-center p-10 bg-green-200
+    max-w-[640px] max-h-[640px] text-2xl font-playfair font-semibold">
       BEUTIFULL FLOWERS
     </div>
   </motion.div>
