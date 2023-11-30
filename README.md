@@ -8,7 +8,7 @@ FrontEnd:
  
 # Screenshot
 
-[localhost_5173_ (2)](https://github.com/gjancec/flowerShop/assets/132436103/d37e79d1-56ff-441e-a31f-00a3f730abec)
+![Alt text]()
 
 # React + Vite
 
