@@ -8,12 +8,12 @@ FrontEnd:
  
 # Screenshot
 
-![Alt text]()
+![localhost_5173_ (2)](https://github.com/gjancec/flowerShop/assets/132436103/2e681711-32d8-4f44-aab1-18cc543917eb)
+
 
 # React + Vite
 
-This templa!
-te provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
