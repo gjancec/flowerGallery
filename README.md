@@ -1,10 +1,12 @@
-# Responsive Landing page     
+# FlowerShop  
 
-FrontEnd: HTML/CSS/JavaScript  
-Technology: React + Vite + Tailwind  
+FrontEnd: 
+- HTML/CSS/JavaScript  
+- React + Vite + Tailwind
+- Framer Motion, MediaQuery Hook, TypeAnimation, Form validation  
 
-
-
+ 
+Scree
 
 # React + Vite
 
