@@ -27,7 +27,7 @@ const FGallery =({title}) => {
   return(
     <motion.div variants={galleryVariant} className="relative">
       <div className='absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500 bg-gray-200 z-30 flex flex-col justify-center items-center text-center p-16 text-black'>
-        <p className="text-2xl font-playfair">{title}</p>
+        <p className="text-2xl font-opensans">{title}</p>
         <p className="mt-7">
             Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
             fames odio in at.
@@ -58,15 +58,16 @@ const Gallery=()=> {
           }}
         >
          <div>
-          <p className="font-playfair font-semibold text-4xl">
-            MY <span className="text-red">GALLERY</span>
+          <p className="font-playfair font-semibold text-4xl tracking-widest text-gray-800">
+            <span className="text-red">GALLERY</span>
           </p>
           
           <div className="flex justify-center mt-5">
-          <LineGradient width="w-2/3" />
+          <div className='h-0.5 w-2/3 bg-[#D8608F]' />
+          
           </div>
           </div> 
-          <p className="mt-10 mb-10">
+          <p className="mt-10 mb-10 font-semibold">
             Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
             fames odio in at.
           </p>
@@ -83,7 +84,7 @@ const Gallery=()=> {
   >
     
     {/*ROW 1*/}
-    <div className="flex justify-center text-center items-center p-10 bg-red-200
+    <div className="flex justify-center text-center items-center p-10 tracking-widest  bg-[#D8608F]
               max-w-[640px] max-h-[640px] text-2xl font-playfair font-semibold">
       BEUTIFULL FLOWERS
     </div>
@@ -98,7 +99,7 @@ const Gallery=()=> {
   
   <FGallery title="Flower 6" />
   <FGallery  title="Flower 7" />
-  <div className="flex justify-center text-center items-center p-10 bg-green-200
+  <div className="flex justify-center text-center items-center p-10 tracking-widest bg-[#869B6D]
     max-w-[640px] max-h-[640px] text-2xl font-playfair font-semibold">
       BEUTIFULL FLOWERS
     </div>

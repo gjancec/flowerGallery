@@ -30,9 +30,9 @@ const Landing = ({setSelectedPage}) => {
         }}
       >
 
-      <h1 className='font-bold text-5xl sm:text-6xl pl-10 sm:pl-0'> Flower Gallery</h1>
+      <h1 className='font-playfairsc font-bold text-gray-800 text-4xl tracking-widest sm:text-5xl pl-10 sm:pl-0'> FLOWER GALLERY</h1>
 
-      <h2 className= 'flex sm:text-3 text-2xl pt-4 pl-10 sm:pl-0'> Plants in your home  
+      <h2 className= 'flex sm:text-3 text-2xl pt-4 pl-10 sm:pl-0 font-opensans text-gray-800'> Plants in your home  
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -46,7 +46,8 @@ const Landing = ({setSelectedPage}) => {
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: '1em', paddingLeft: '5px'  }}
+              style={{ fontSize: '1em', paddingLeft: '5px' }}
+              
               repeat={Infinity}
             />
       </h2>
@@ -56,7 +57,7 @@ const Landing = ({setSelectedPage}) => {
       {/* CALL TO ACTION*/}
 
       <motion.div
-        className='flex mt-5 justify-center md:justify-start'
+        className='flex mt-4 justify-center md:justify-start'
         initial="hidden" 
         whileInView="visible" 
         viewport ={{once:true, amount:0.5}}
@@ -67,7 +68,7 @@ const Landing = ({setSelectedPage}) => {
         }}
       > 
         <AnchorLink 
-            className='bg-red-200 rounded-sm py-3 px-7 font-semibold hover:bg-red-100 transition duration-500' 
+            className='bg-[#D8608F] rounded-sm py-3 px-7 font-semibold hover:bg-red-100 transition duration-500' 
             onClick={() => setSelectedPage("contact")}
             href="#gallery"
         > 
@@ -88,7 +89,7 @@ const Landing = ({setSelectedPage}) => {
       > 
        {/* target="_blank" - open in new tab*/}
       {/* rel="noreferrer" - no bugs with older browsers*/}
-      <div className='flex justify-center md:justify-start my-7 gap-7'>
+      <div className='flex justify-center md:justify-start my-4 gap-7 text-gray-600'>
             <a 
              className='hover:opacity-50 transition duration-500' 
              size={20}

@@ -8,6 +8,9 @@ import Gallery from './scenes/Gallery';
 import {useEffect, useState } from 'react';
 import useMediaQuery  from './hooks/useMediaQuery';
 import {motion} from "framer-motion";
+import Footer from "./scenes/Footer";
+
+
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -63,29 +66,7 @@ function App() {
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-        
-        <motion.div
-          margin="0 0 -200px 0"
-          amount="all"
-          onViewportEnter={() => setSelectedPage("contact")}
-        >
-          <Contact />
-        </motion.div>
-      </div>
-
       
-    {/*}  <div className="w-5/6 mx-auto md:h-full ">
-        <motion.div
-          margin="0 0 -200px 0"
-          amount="all"
-          onViewportEnter={() => setSelectedPage("about")}
-        >
-          <About />
-        </motion.div>
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
-        
         <motion.div
           margin="0 0 -200px 0"
           amount="all"
@@ -93,8 +74,10 @@ function App() {
         >
           <Contact />
         </motion.div>
+
       </div>
-      <Footer />*/}
+    
+      <Footer />
 
   </div>
   );

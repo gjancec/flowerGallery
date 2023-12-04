@@ -10,7 +10,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
   return (
     <AnchorLink
-      className={`${selectedPage === lowerCasePage ? "text-red-300" : ""} hover:text-red-300 transition duration-500`}
+      className={`${selectedPage === lowerCasePage ? "text-[#D8608F]" : ""} hover:text-[#D8608F] transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -24,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-transparent";
+  const navbarBackground = isTopOfPage ? "" : "bg-[#F2F2F3]";
 
 
 
@@ -32,7 +32,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
-        <h4 className="font-playfair text-3xl font-bold">LOGO.</h4>
+        <h4 className="font-opensans text-3xl font-bold">LOGO.</h4>
 
         {/* DESKTOP NAV */}
         {isAboveSmallScreens ? (
@@ -47,11 +47,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
-              page="About"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            
             <Link
               page="Contact"
               selectedPage={selectedPage}
@@ -76,7 +72,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             </div>
 
             {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+            <div className="flex flex-col gap-10 ml-[33%] text-2xl font-opensans">
               <Link
                 page="Home"
                 selectedPage={selectedPage}
@@ -87,11 +83,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              <Link
-                page="About"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
+              
               <Link
                 page="Contact"
                 selectedPage={selectedPage}

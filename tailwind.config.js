@@ -5,13 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        playfair: ["Playfair Display", "serif"],
+        playfairsc: ["Playfair Display SC", "serif"],
+        opensans: ["Open Sans", "sans-serif"],
+      },
+    },
   },
   
-  fontFamily:{
-    playfair: ["Playfair Display", "serif"],
-    opensans: ["Open Sans", "sans-serif"],
-  },
+  
+  
+  
   plugins: [],
 }
 
