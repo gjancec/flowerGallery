@@ -8,8 +8,7 @@ FrontEnd:
  
 # Screenshot
 
-![localhost_5173_ (2)](https://github.com/gjancec/flowerShop/assets/132436103/2e681711-32d8-4f44-aab1-18cc543917eb)
-
+![localhost_5173_ (3)](https://github.com/gjancec/flowerShop/assets/132436103/8171ce9c-8611-4ae1-96e4-b38e9aa01e4e)
 
 # React + Vite
 
