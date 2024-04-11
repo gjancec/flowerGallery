@@ -1,16 +1,13 @@
-
-import Landing from './scenes/Landing';
-import Navbar from './scenes/Navbar';
-import DotGroup from './scenes/DotGroup';
+import Landing from "./scenes/Landing";
+import Navbar from "./scenes/Navbar";
+import DotGroup from "./scenes/DotGroup";
 import LineGradient from "./components/LineGradient";
-import Contact from './scenes/Contact';
-import Gallery from './scenes/Gallery';
-import {useEffect, useState } from 'react';
-import useMediaQuery  from './hooks/useMediaQuery';
-import {motion} from "framer-motion";
+import Contact from "./scenes/Contact";
+import Gallery from "./scenes/Gallery";
+import { useEffect, useState } from "react";
+import useMediaQuery from "./hooks/useMediaQuery";
+import { motion } from "framer-motion";
 import Footer from "./scenes/Footer";
-
-
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -19,7 +16,6 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-    
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage("home");
@@ -31,19 +27,20 @@ function App() {
   }, []);
 
   return (
-  <div>
-    <Navbar 
-    isTopOfPage={isTopOfPage} 
-    selectedPage={selectedPage} 
-    setSelectedPage={setSelectedPage}
-    />
-    <div className ="w-full mx-auto md:h-full">
-      {isDesktop  && (
-        <DotGroup 
+    <div>
+      <Navbar
+        isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage} />
-      )}
-      
+        setSelectedPage={setSelectedPage}
+      />
+      <div className="w-full mx-auto md:h-full">
+        {isDesktop && (
+          <DotGroup
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        )}
+
         <motion.div
           margin="0 0 -200px 0"
           amount="all"
@@ -51,12 +48,11 @@ function App() {
         >
           <Landing setSelectedPage={setSelectedPage} />
         </motion.div>
-      
-    </div>
-    {/*<Landing setSelectedPage={setSelectedPage}/>*/}
-   <LineGradient />
-    <div className='w-5/6 mx-auto md:h-full'>
-    <motion.div
+      </div>
+      {/*<Landing setSelectedPage={setSelectedPage}/>*/}
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <motion.div
           margin="0 0 -200px 0"
           amount="all"
           onViewportEnter={() => setSelectedPage("gallery")}
@@ -66,7 +62,6 @@ function App() {
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-      
         <motion.div
           margin="0 0 -200px 0"
           amount="all"
@@ -74,12 +69,10 @@ function App() {
         >
           <Contact />
         </motion.div>
-
       </div>
-    
-      <Footer />
 
-  </div>
+      <Footer />
+    </div>
   );
 }
 

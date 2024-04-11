@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-{/*FaBars hamburger, FaTimes cross*/}
-import {FaBars, FaTimes} from 'react-icons/fa'
+{
+  /*FaBars hamburger, FaTimes cross*/
+}
+import { FaBars, FaTimes } from "react-icons/fa";
 
-import useMediaQuery from '../hooks/useMediaQuery';
+import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
@@ -19,15 +21,11 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   );
 };
 
-
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const navbarBackground = isTopOfPage ? "" : "bg-[#F2F2F3]";
-
-
-
 
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
@@ -47,13 +45,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            
+
             <Link
               page="Contact"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-           
           </div>
         ) : (
           <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -83,13 +80,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              
+
               <Link
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              
             </div>
           </div>
         )}
